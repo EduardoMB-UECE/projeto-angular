@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+.espaco {
+	height: 100px;
+	clear: both;
+	display: block;
+}
+
+img {
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	display: block;
+}
+
+p {
+	text-align: center;
+	font-size: 36px;
+}
+
+.row {
+	padding-bottom: 30px;
+}
+
+input {
+	margin-bottom: 20px;
+}
+
+.direita {
+	float: right;
+	display: inline;
+}
+
+td img {
+	height: 40px;
+	width: 40px;
+	
+}
+
+table {
+	text-align: center;
+	border-top: 2px solid black;
+}
+
+th {
+	border: 2px solid black !important;
+}
+
+h2 {
+	color: white;
+	text-align: center;
+	text-shadow: 2px 2px #444;
+	margin-bottom: 20px;
+	background-color: #007bff;
+	height: 45px;
+}
+
+.linhaCinzaTabela {
+	background-color: #ccc;
+}
+
+td span {
+	margin-right: 20px;
+}

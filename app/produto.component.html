@@ -1,0 +1,73 @@
+<div class="container espaco"></div>
+<div class="container">
+	<div class="form-row">
+		<div class="col-12">
+			<input type="text" class="form-control"
+				placeholder="Nome" [(ngModel)]="produto.Nome">
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="col-6">
+			<input type="text" class="form-control"
+				placeholder="Preço" [(ngModel)]="produto.Preco">
+		</div>
+
+		<div class="col-6">
+			<select name="categorias" class="form-control" [(ngModel)]="produto.Categoria_Id">
+				<option selected value="0">Selecione uma categoria</option>
+				<option *ngFor="let cat of categorias" value="{{cat.Id}}">{{cat.Nome}}</option>
+			</select>
+		</div>
+
+	</div>
+	<div class="row ">
+		<div class="col-8"></div>
+		<div class="col-2">
+			<button class="btn btn-lg btn-primary" (click)="cadastrar()">Confirmar</button>
+		</div>
+		<div class="col-2" *ngIf="produto.Id != 0">
+			<button  class="btn btn-lg btn-secondary" (click)="cancelar()">Cancelar</button>
+		</div>
+		<div class="col-2" *ngIf="produto.Id == 0">
+			<a class="btn btn-lg btn-secondary"  routerLink="/">Voltar</a>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="container espaco"></div>
+	<div class="container-fluid">
+
+		<h2>Produtos</h2>
+
+		<table id="tabelaProdutos" class="table">
+			<thead>
+				<tr>
+					<th>Código</th>
+					<th>Nome</th>
+					<th>Preço</th>
+					<th>Categoria</th>
+					<th>Editar</th>
+					<th>Remover</th>
+				</tr>
+			</thead>
+			<tr *ngFor="let prod of produtos">
+				<td>{{prod.Id}}</td>
+				<td>{{prod.Nome}}</td>
+				<td>{{prod.Preco}}</td>
+				<td>{{prod.Categoria_Nome}}</td>
+				<td>
+					<button type="button" class="btn" (click)="editar(prod)">
+						<img src="./assets/edit.png" />
+					</button>
+				</td>
+				<td>
+					<button type="button" class="btn" (click)="remover(prod.Id)">
+						<img src="./assets/delete.png" />
+					</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
